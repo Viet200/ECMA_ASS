@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "navigo": "^8.11.1"
   }
 }
