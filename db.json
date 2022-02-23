@@ -1,0 +1,56 @@
+{
+    "posts": [],
+    "products": [
+      {
+        "product_name": "iPad Pro 10.5",
+        "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645458424/kb4zhs7pys56cccr8oaj.jpg",
+        "price": "8000000",
+        "sale": "7500000",
+        "desc": "iPad Pro 10.5 2017 được đánh giá là chiếc máy tính bảng hoàn hảo của Apple khi được hãng ưu ái cả về thiết kế, cấu hình phần cứng và phần mềm của máy. Nếu bạn là người đang cần một chiếc máy tính bảng phục vụ tốt cho việc học online, giải trí với màn hình lớn thì iPad Pro 10.5 2017 Cũ là sự lựa chọn mà bạn không thể bỏ qua. Cùng xem đánh giá chi tiết của MobileCity.",
+        "categoryId": "3",
+        "id": 1
+      },
+      {
+        "product_name": "Samsung Galaxy Tab S7 FE",
+        "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645458518/vltfpeajcm5vyfkhsi7r.jpg",
+        "price": "9000000",
+        "sale": "8650000",
+        "desc": "Samsung chính thức trình làng mẫu máy tính bảng có tên Galaxy Tab S7 FE, máy trang bị cấu hình mạnh mẽ, màn hình giải trí siêu lớn và điểm ấn tượng nhất là viên pin siêu khủng được tích hợp bên trong",
+        "categoryId": "2",
+        "id": 2
+      },
+      {
+        "product_name": "iPad Pro 10.5",
+        "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645459881/i8cgjxhispv36vfv4mwh.jpg",
+        "price": "12333",
+        "sale": "1221122",
+        "desc": "iPad Pro 10.5 2017 được đánh giá là chiếc máy tính bảng hoàn hảo của Apple khi được hãng ưu ái cả về thiết kế, cấu hình phần cứng và phần mềm của máy. Nếu bạn là người đang cần một chiếc máy tính bảng phục vụ tốt cho việc học online, giải trí với màn hình lớn thì iPad Pro 10.5 2017 Cũ là sự lựa chọn mà bạn không thể bỏ qua. Cùng xem đánh giá chi tiết của MobileCity.",
+        "categoryId": "1",
+        "id": 3
+      }
+    ],
+    "categorys": [
+      {
+        "Cate_name": "apple watch",
+        "id": 1
+      },
+      {
+        "Cate_name": "tablet",
+        "id": 2
+      },
+      {
+        "Cate_name": "ipad",
+        "id": 3
+      }
+    ],
+    "users": [
+      {
+        "email": "nguyenvanviet28072001@gmail.com",
+        "password": "$2a$10$zVh.aS0TymROc0dz7.jVX.Ib0gDvNMeRS665OdT/D/464vQm0Mnha",
+        "username": "viet",
+        "vaiTro": "2",
+        "id": 1
+      }
+    ],
+    "order": []
+  }
