@@ -30,6 +30,20 @@ const print = async (content, id) => {
         content.afterRender(id);
     }
 };
+router.on("/admin/*", () => {}, {
+    before: (done) => {
+        if (localStorage.getItem("user")) {
+            const userId = JSON.parse(localStorage.getItem("user")).vaiTro;
+            if (userId === "1") {
+                done();
+            } else {
+                document.location.href = "/";
+            }
+        } else {
+            document.location.href = "/";
+        }
+    },
+});
 router.on({
     "/": () => {
         print(Home);
