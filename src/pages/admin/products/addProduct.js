@@ -1,5 +1,7 @@
 import axios from "axios";
 import toastr from "toastr";
+import $ from "jquery";
+import validate from "jquery-validation";
 import { add } from "../../../API/Products";
 import { getAllCate } from "../../../API/Category";
 import navAdmin from "../../../components/navAdmin";
@@ -96,6 +98,7 @@ const addProduct = {
                     "Content-Type": "application/x-www-formendcoded",
                 },
             });
+
             form_addPro.addEventListener("submit", (e) => {
                 console.log(select.value);
                 e.preventDefault();

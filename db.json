@@ -8,7 +8,7 @@
       "price": "8000000",
       "sale": "7500000",
       "desc": "iPad",
-      "categoryId": "1"
+      "categoryId": "3"
     },
     {
       "id": 2,
@@ -17,7 +17,7 @@
       "price": "9000000",
       "sale": "86500000",
       "desc": "Samsung",
-      "categoryId": "1"
+      "categoryId": "2"
     },
     {
       "product_name": "iPad Pro 10.5",

@@ -1,4 +1,6 @@
 import toastr from "toastr";
+import $ from "jquery";
+import validate from "jquery-validation";
 import { signin } from "../API/user";
 
 const Signin = {
@@ -7,12 +9,12 @@ const Signin = {
         <div class="w-full pt-20 pb-60 h-full bg-[#9f9da7]">
             <div class="w-96 h-96 m-auto bg-white rounded-md text-center">
                 <div class="font-medium pt-5 text-[#2b3e51] text-3xl">Đăng nhập tài khoản</div>
-                <form class="ml-6 my-10 form-signin">
+                <form class="ml-6 my-10 form-signin" id="form-singin">
                 <div class="mb-3">
-                <input type="text" class="form-control w-80 h-14 ml-2" id="email" placeholder="Email">
+                <input type="text" name="e-mail" class="form-control w-80 h-14 ml-2" id="email" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                <input type="text" class="form-control w-80 h-14 ml-2" id="password" placeholder="Mật khẩu">
+                <input type="text" name="pass-word" class="form-control w-80 h-14 ml-2" id="password" placeholder="Mật khẩu">
                 </div>
                 <div class="mb-3 hidden">
                     <input type="text" class="form-control" id="vaiTro" value = "2">
@@ -25,6 +27,7 @@ const Signin = {
     },
     afterRender() {
         const formSignin = document.querySelector(".form-signin");
+
         formSignin.addEventListener("submit", async (e) => {
             e.preventDefault();
             try {
