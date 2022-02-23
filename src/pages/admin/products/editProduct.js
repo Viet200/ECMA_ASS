@@ -1,10 +1,12 @@
+import toastr from "toastr";
 import navAdmin from "../../../components/navAdmin";
-import {get, edit } from "../../../API/Products";
+import { get, edit } from "../../../API/Products";
 import { getAllCate } from "../../../API/Category";
+
 const editProduct = {
     async render(id) {
         const { data } = await get(id);
-        return /*html*/ `
+        return /* html */ `
         ${navAdmin.render()}
         <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -76,27 +78,29 @@ const editProduct = {
     },
     async afterRender(id) {
         const { data } = await getAllCate();
-        var select = document.querySelector(".custom-select");
-        var result = data.map((item) => {
-            return `
+        const select = document.querySelector(".custom-select");
+        const result = data.map((item) => `
                 <option value="${item.id}">${item.Cate_name}</option>
-            `;
-        }).join("");
+            `).join("");
         select.innerHTML = result;
         const form_editPro = document.querySelector(".form-editProduct");
         form_editPro.addEventListener("submit", (e) => {
             e.preventDefault();
             const product = {
-                id: id,
-                "product_name": document.querySelector("#addNamePro").value,
-                "img": document.querySelector("#addImagePro").value,
-                "price": document.querySelector("#addPricePro").value,
-                "sale": document.querySelector("#addSalePro").value,
-                "desc": document.querySelector("#addDescPro").value,
-                "categoryId": select.value
+                id,
+                product_name: document.querySelector("#addNamePro").value,
+                img: document.querySelector("#addImagePro").value,
+                price: document.querySelector("#addPricePro").value,
+                sale: document.querySelector("#addSalePro").value,
+                desc: document.querySelector("#addDescPro").value,
+                categoryId: select.value,
             };
             edit(product);
+            toastr.success("Sửa sản phẩm thành công, chuyển trang sau 2s");
+            setTimeout(() => {
+                document.location.href = "/admin/product";
+            }, 2000);
         });
-    }
+    },
 };
 export default editProduct;

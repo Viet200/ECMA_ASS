@@ -1,9 +1,10 @@
 import navAdmin from "../../../components/navAdmin";
 import { getAll, remove } from "../../../API/Products";
+
 const AdminProducts = {
-        async render() {
-            const { data } = await getAll();
-            return /* html */ `
+    async render() {
+        const { data } = await getAll();
+        return /* html */ `
             ${navAdmin.render()}
             <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -76,7 +77,7 @@ const AdminProducts = {
         <th></th>
             </tr>
           </thead>
-            ${data.map((item) => /*html*/
+            ${data.map((item) => /* html */
         `
         <tbody class="bg-white divide-y divide-gray-200">
         <tr>
@@ -112,8 +113,7 @@ const AdminProducts = {
         </td>
         </tr>
       </tbody>
- `
-    ).join("")}
+ `).join("")}
     </table>
     </div>
   </div>
@@ -126,18 +126,18 @@ const AdminProducts = {
         </main>
         `;
     },
-    afterRender(){
+    afterRender() {
         const btnDelete = document.querySelectorAll(".btnDelete");
         btnDelete.forEach((button) => {
-            button.addEventListener("click", ()=>{
-                const id = button.dataset.id;
+            button.addEventListener("click", () => {
+                const { id } = button.dataset;
                 const confirm = window.confirm("Bạn có muốn xóa không ?");
-                if(confirm) {
+                if (confirm) {
                     remove(id);
                     button.parentNode.parentNode.parentNode.remove();
                 }
             });
         });
-    }
+    },
 };
 export default AdminProducts;

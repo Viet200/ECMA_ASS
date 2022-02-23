@@ -1,9 +1,11 @@
+import toastr from "toastr";
 import navAdmin from "../../../components/navAdmin";
-import {get, edit } from "../../../API/Category";
+import { get, edit } from "../../../API/Category";
+
 const editCategory = {
     async render(id) {
         const { data } = await get(id);
-        return /*html*/ `
+        return /* html */ `
         ${navAdmin.render()}
         <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -55,11 +57,15 @@ const editCategory = {
         form_editCategory.addEventListener("submit", (e) => {
             e.preventDefault();
             const category = {
-                id: id,
-                "Cate_name": document.querySelector("#addCate_name").value,
+                id,
+                Cate_name: document.querySelector("#addCate_name").value,
             };
             edit(category);
+            toastr.success("Sửa danh mục thành công, chuyển trang sau 2s");
+            setTimeout(() => {
+                document.location.href = "/admin/category";
+            }, 2000);
         });
-    }
+    },
 };
 export default editCategory;

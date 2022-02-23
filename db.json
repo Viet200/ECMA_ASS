@@ -2,22 +2,22 @@
   "posts": [],
   "products": [
     {
-      "product_name": "iPad Pro 10.5",
+      "id": 1,
+      "product_name": "iPad",
       "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645458424/kb4zhs7pys56cccr8oaj.jpg",
       "price": "8000000",
       "sale": "7500000",
-      "desc": "iPad Pro 10.5 2017 được đánh giá là chiếc máy tính bảng hoàn hảo của Apple khi được hãng ưu ái cả về thiết kế, cấu hình phần cứng và phần mềm của máy. Nếu bạn là người đang cần một chiếc máy tính bảng phục vụ tốt cho việc học online, giải trí với màn hình lớn thì iPad Pro 10.5 2017 Cũ là sự lựa chọn mà bạn không thể bỏ qua. Cùng xem đánh giá chi tiết của MobileCity.",
-      "categoryId": "3",
-      "id": 1
+      "desc": "iPad",
+      "categoryId": "1"
     },
     {
-      "product_name": "Samsung Galaxy Tab S7 FE",
+      "id": 2,
+      "product_name": "Samsung",
       "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645458518/vltfpeajcm5vyfkhsi7r.jpg",
       "price": "9000000",
-      "sale": "8650000",
-      "desc": "Samsung chính thức trình làng mẫu máy tính bảng có tên Galaxy Tab S7 FE, máy trang bị cấu hình mạnh mẽ, màn hình giải trí siêu lớn và điểm ấn tượng nhất là viên pin siêu khủng được tích hợp bên trong",
-      "categoryId": "2",
-      "id": 2
+      "sale": "86500000",
+      "desc": "Samsung",
+      "categoryId": "1"
     },
     {
       "product_name": "iPad Pro 10.5",
@@ -32,7 +32,7 @@
   "categorys": [
     {
       "id": 1,
-      "Cate_name": "apple"
+      "Cate_name": "apple watch"
     },
     {
       "Cate_name": "tablet",
@@ -41,6 +41,10 @@
     {
       "Cate_name": "ipad",
       "id": 3
+    },
+    {
+      "Cate_name": "xiaomi",
+      "id": 4
     }
   ],
   "users": [
@@ -55,7 +59,7 @@
       "email": "vietnvph13644@fpt.edu.vn",
       "password": "$2a$10$cM1EwAmrJAnsoAGoC9iZRufw6HPs8dMG/WTCieF/NE4fSOPMVZLFO",
       "username": "viet",
-      "vaiTro": "2",
+      "vaiTro": "1",
       "id": 2
     }
   ],

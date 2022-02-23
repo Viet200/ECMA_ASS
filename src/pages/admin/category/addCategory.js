@@ -1,8 +1,10 @@
+import toastr from "toastr";
 import { add } from "../../../API/Category";
 import navAdmin from "../../../components/navAdmin";
+
 const addCategory = {
     render() {
-        return /*html*/ `
+        return /* html */ `
         ${navAdmin.render()}
         <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -54,10 +56,14 @@ const addCategory = {
         form_addCategory.addEventListener("submit", (e) => {
             e.preventDefault();
             const category = {
-                "Cate_name": document.querySelector("#addCate_name").value,
+                Cate_name: document.querySelector("#addCate_name").value,
             };
             add(category);
+            toastr.success("Thêm danh mục thành công, chuyển trang sau 2s");
+            setTimeout(() => {
+                document.location.href = "/admin/category";
+            }, 2000);
         });
-    }
+    },
 };
 export default addCategory;

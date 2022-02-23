@@ -1,11 +1,12 @@
+import axios from "axios";
+import toastr from "toastr";
 import { add } from "../../../API/Products";
 import { getAllCate } from "../../../API/Category";
 import navAdmin from "../../../components/navAdmin";
-import axios from "axios";
+
 const addProduct = {
     render() {
-
-        return /*html*/ `
+        return /* html */ `
         ${navAdmin.render()}
         <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -77,16 +78,14 @@ const addProduct = {
     },
     async afterRender() {
         const { data } = await getAllCate();
-        var select = document.querySelector(".custom-select");
-        var result = data.map((item) => {
-            return `
+        const select = document.querySelector(".custom-select");
+        const result = data.map((item) => `
                 <option value="${item.id}">${item.Cate_name}</option>
-            `;
-        }).join("");
+            `).join("");
         select.innerHTML = result;
         const form_addPro = document.querySelector(".form-addProduct");
         const imgProduct = document.querySelector("#addImagePro");
-        imgProduct.addEventListener("change", async(e) => {
+        imgProduct.addEventListener("change", async (e) => {
             const file = e.target.files[0];
             const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/daa9dhzta/image/upload";
             const formData = new FormData();
@@ -101,17 +100,20 @@ const addProduct = {
                 console.log(select.value);
                 e.preventDefault();
                 const product = {
-                    "product_name": document.querySelector("#addNamePro").value,
-                    "img": data.url,
-                    "price": document.querySelector("#addPricePro").value,
-                    "sale": document.querySelector("#addSalePro").value,
-                    "desc": document.querySelector("#addDescPro").value,
-                    "categoryId": select.value
+                    product_name: document.querySelector("#addNamePro").value,
+                    img: data.url,
+                    price: document.querySelector("#addPricePro").value,
+                    sale: document.querySelector("#addSalePro").value,
+                    desc: document.querySelector("#addDescPro").value,
+                    categoryId: select.value,
                 };
                 add(product);
+                toastr.success("Thêm sản phẩm thành công, chuyển trang sau 2s");
+                setTimeout(() => {
+                    document.location.href = "/admin/product";
+                }, 2000);
             });
         });
-
-    }
+    },
 };
 export default addProduct;
