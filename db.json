@@ -3,12 +3,12 @@
   "products": [
     {
       "id": 1,
-      "product_name": "iPad",
+      "product_name": "11111",
       "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645458424/kb4zhs7pys56cccr8oaj.jpg",
       "price": "8000000",
       "sale": "7500000",
       "desc": "iPad",
-      "categoryId": "3"
+      "categoryId": "1"
     },
     {
       "id": 2,
@@ -27,6 +27,15 @@
       "desc": "iPad Pro 10.5 2017 được đánh giá là chiếc máy tính bảng hoàn hảo của Apple khi được hãng ưu ái cả về thiết kế, cấu hình phần cứng và phần mềm của máy. Nếu bạn là người đang cần một chiếc máy tính bảng phục vụ tốt cho việc học online, giải trí với màn hình lớn thì iPad Pro 10.5 2017 Cũ là sự lựa chọn mà bạn không thể bỏ qua. Cùng xem đánh giá chi tiết của MobileCity.",
       "categoryId": "1",
       "id": 3
+    },
+    {
+      "product_name": "iPad Pro 10.5",
+      "img": "http://res.cloudinary.com/daa9dhzta/image/upload/v1645669697/rgcdsi5mntvhoaumztvi.jpg",
+      "price": "2000000",
+      "sale": "1900000",
+      "desc": "iPad Pro 10.5 2017 được đánh giá là chiếc máy tính bảng hoàn hảo của Apple khi được hãng ưu ái cả về thiết kế, cấu hình phần cứng và phần mềm của máy. Nếu bạn là người đang cần một chiếc máy tính bảng phục vụ tốt cho việc học online, giải trí với màn hình lớn thì iPad Pro 10.5 2017 Cũ là sự lựa chọn mà bạn không thể bỏ qua. Cùng xem đánh giá chi tiết của MobileCity.",
+      "categoryId": "3",
+      "id": 4
     }
   ],
   "categorys": [

@@ -14,7 +14,7 @@ const Signin = {
                 <input type="text" name="e-mail" class="form-control w-80 h-14 ml-2" id="email" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                <input type="text" name="pass-word" class="form-control w-80 h-14 ml-2" id="password" placeholder="Mật khẩu">
+                <input type="password" name="pass-word" class="form-control w-80 h-14 ml-2" id="password" placeholder="Mật khẩu">
                 </div>
                 <div class="mb-3 hidden">
                     <input type="text" class="form-control" id="vaiTro" value = "2">

@@ -1,23 +1,24 @@
+import toastr from "toastr";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { reRender } from "../utils";
 import { decreaseQuantity, increaseQuantity, removeItemInCart } from "../utils/cart";
-import toastr from "toastr";
 import "toastr/build/toastr.min.css";
-const cart = {
-        render() {
-            let cart = [];
-            if (localStorage.getItem("cart")) {
-                cart = JSON.parse(localStorage.getItem("cart"));
-            }
-            let sum = 0;
-            let result = 0;
-            // cart.forEach((item) => {
-            //     new Intl.NumberFormat("VND", { style: "currency", currency: "VND" }).format(sum = (item.price - (item.price * item.sale / 100)) * item.quantity);
-            // });
 
-            // console.log(sum);
-            return /*html*/ `
+const cart = {
+    render() {
+        let cart = [];
+        if (localStorage.getItem("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        let sum = 0;
+        let result = 0;
+        // cart.forEach((item) => {
+        //     new Intl.NumberFormat("VND", { style: "currency", currency: "VND" }).format(sum = (item.price - (item.price * item.sale / 100)) * item.quantity);
+        // });
+
+        // console.log(sum);
+        return /* html */ `
             ${Header.render()}
             <div class="w-full h-auto">
             <div class="max-w-screen-lg m-auto h-auto flex py-2 border-b-2 border-[#f2f2f2]">
@@ -48,7 +49,7 @@ const cart = {
                     </div>
                 </div>
                 <div class="border-cart w-full h-auto flex justify-between mt-6 px-4 pt-4 flex-wrap">
-                    ${cart.map(item => /*html*/`
+                    ${cart.map((item) => /* html */`
                     <div class="w-1/3 flex items-center">
                     <div>
                         <img src="${item.img}" alt="" class="w-16">
@@ -74,8 +75,8 @@ const cart = {
                 </div>
                 <div class="w-1/5 flex items-center">
                     <div class="text-[#fe4c50] font-bold">
-                        ${sum = item.price *item.quantity}
-                        <div class="hidden">${result+=sum}</div>
+                        ${sum = item.price * item.quantity}
+                        <div class="hidden">${result += sum}</div>
                     </div>
                     <div>
                     <button data-id="${item.id}" class="btn btn-delete rounded-md h-7 flex items-center justify-center text-white bg-red-500 p-2 ml-8">Xóa</button>
@@ -104,14 +105,14 @@ const cart = {
             ${Footer.render()}
         `;
     },
-    afterRender(){
+    afterRender() {
         const btns = document.querySelectorAll(".btn");
-        btns.forEach(btn => {
-            const id = btn.dataset.id;
+        btns.forEach((btn) => {
+            const { id } = btn.dataset;
             btn.addEventListener("click", () => {
-                if(btn.classList.contains("btn-increase")){
+                if (btn.classList.contains("btn-increase")) {
                     increaseQuantity(id, () => reRender(cart, "#app"));
-                } else if(btn.classList.contains("btn-decrease")){
+                } else if (btn.classList.contains("btn-decrease")) {
                     decreaseQuantity(id, () => reRender(cart, "#app"));
                 } else {
                     removeItemInCart(id, () => {
@@ -121,6 +122,6 @@ const cart = {
                 }
             });
         });
-    }
+    },
 };
 export default cart;
